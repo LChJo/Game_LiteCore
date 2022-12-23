@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD5A6B64-4325-4796-B7AC-EB975B31CFF4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LiteFrame</RootNamespace>
+    <AssemblyName>LiteFrame</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Addon\ClientLog\IClientLog.cs" />
+    <Compile Include="Core\Addon\ClientProfile\IClientProfile.cs" />
+    <Compile Include="Core\Addon\Config\IConfig.cs" />
+    <Compile Include="Core\Addon\ECS\ECS.cs" />
+    <Compile Include="Core\Addon\ECS\IECS.cs" />
+    <Compile Include="Core\Addon\Event\IEvent.cs" />
+    <Compile Include="Core\Addon\Fsm\IFsm.cs" />
+    <Compile Include="Core\Addon\IAddon.cs" />
+    <Compile Include="Core\Addon\Language\ILanguage.cs" />
+    <Compile Include="Core\Addon\Model\IModel.cs" />
+    <Compile Include="Core\Addon\Model\Model.cs" />
+    <Compile Include="Core\Addon\Network\INetWork.cs" />
+    <Compile Include="Core\Addon\Resource\IResource.cs" />
+    <Compile Include="Core\Base\ClassService\BaseSingle.cs" />
+    <Compile Include="Core\Base\ClassService\ClassException.cs" />
+    <Compile Include="Core\Base\ClassService\ClassSvc.cs" />
+    <Compile Include="Core\Addon\IUpdate.cs" />
+    <Compile Include="Core\Base\ClassService\ISingle.cs" />
+    <Compile Include="Core\Core.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
