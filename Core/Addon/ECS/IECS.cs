@@ -8,7 +8,7 @@ namespace LiteFrame.Core
 {
     interface IECSSign
     {
-        IECS Model { get; }
+        IECS ECS { get; }
     }
 
     interface IECS

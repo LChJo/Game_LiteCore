@@ -9,10 +9,15 @@ using System.Collections.Generic;
 
 namespace LiteFrame.Core
 {
-    public abstract class Core : IModelSign
+    public abstract class Core : IECSSign
     {
-        IModel IModelSign.Model => Fetch<Model>();
+        IECS IECSSign.ECS => null;
 
+        /// <summary>
+        /// Core的拥有者来调用Update接口。
+        /// </summary>
+        /// <param name="elapseSeconds">逻辑流逝时间，以秒为单位。</param>
+        /// <param name="realElapseSeconds">真实流逝时间，以秒为单位。</param>
         public void Update(float elapseSeconds, float realElapseSeconds)
         {
             foreach (IAddon item in _addons)
@@ -73,11 +78,6 @@ namespace LiteFrame.Core
             Remove<T>();
         }
 
-        /// <summary>
-        /// Core的拥有者来调用Update接口。
-        /// </summary>
-        /// <param name="elapseSeconds">逻辑流逝时间，以秒为单位。</param>
-        /// <param name="realElapseSeconds">真实流逝时间，以秒为单位。</param>
         #endregion
 
         #region private
