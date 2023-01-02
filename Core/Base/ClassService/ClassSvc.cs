@@ -33,7 +33,7 @@ namespace LiteFrame.Core
             {
                 if (index > 0)
                 {
-                    throw new ClassException("Single Cannot Have Index");
+                    throw new LiteCoreException("Single Cannot Have Index");
                 }
 
                 TypeTable<T>.instance = newModel;
@@ -150,7 +150,7 @@ namespace LiteFrame.Core
         {
             if (instance == null)
             {
-                throw new ClassException("instance == null");
+                throw new LiteCoreException("instance == null");
             }
 
             if (_objectId.TryGetValue(instance, out var id))

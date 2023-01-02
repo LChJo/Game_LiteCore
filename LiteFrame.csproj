@@ -44,8 +44,18 @@
     <Compile Include="Core\Addon\ClientLog\IClientLog.cs" />
     <Compile Include="Core\Addon\ClientProfile\IClientProfile.cs" />
     <Compile Include="Core\Addon\Config\IConfig.cs" />
+    <Compile Include="Core\Addon\ECS\Component\Component.cs" />
+    <Compile Include="Core\Addon\ECS\Component\IGuardCom.cs" />
+    <Compile Include="Core\Addon\ECS\Component\IKeyCom.cs" />
+    <Compile Include="Core\Addon\ECS\Component\ISingleCom.cs" />
     <Compile Include="Core\Addon\ECS\ECS.cs" />
+    <Compile Include="Core\Addon\ECS\Entity\Entity.cs" />
     <Compile Include="Core\Addon\ECS\IECS.cs" />
+    <Compile Include="Core\Addon\ECS\World\Archetype.cs" />
+    <Compile Include="Core\Addon\ECS\World\Builder.cs" />
+    <Compile Include="Core\Addon\ECS\World\ComponentTemplate.cs" />
+    <Compile Include="Core\Addon\ECS\World\IdGenerator.cs" />
+    <Compile Include="Core\Addon\ECS\World\World.cs" />
     <Compile Include="Core\Addon\Event\IEvent.cs" />
     <Compile Include="Core\Addon\Fsm\IFsm.cs" />
     <Compile Include="Core\Addon\IAddon.cs" />
@@ -55,13 +65,15 @@
     <Compile Include="Core\Addon\Network\INetWork.cs" />
     <Compile Include="Core\Addon\Resource\IResource.cs" />
     <Compile Include="Core\Base\ClassService\BaseSingle.cs" />
-    <Compile Include="Core\Base\ClassService\ClassException.cs" />
+    <Compile Include="Core\Base\LiteCoreException.cs" />
     <Compile Include="Core\Base\ClassService\ClassSvc.cs" />
     <Compile Include="Core\Addon\IUpdate.cs" />
     <Compile Include="Core\Base\ClassService\ISingle.cs" />
     <Compile Include="Core\Core.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Core\Addon\ECS\System\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

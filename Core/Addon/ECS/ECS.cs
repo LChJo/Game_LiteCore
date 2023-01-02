@@ -3,7 +3,7 @@
 // Copyright © 2022 LoJo. All rights reserved.
 // Email: 22771133@qq.com
 //------------------------------------------------------------
-namespace LiteFrame.Core
+namespace LiteFrame.Core.ECS
 {
     class ECS : IECS, IAddon, IUpdate
     {
