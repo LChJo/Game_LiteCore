@@ -241,6 +241,32 @@ namespace LiteFrame.Core.ECS
             }
         }
 
+        public static System AttachSystem<T>(this World world) where T : System
+        {
+            T sys = ClassSvc.Build<T>();
+            if (sys is UpdateSystem)
+            {
+                world.AddtoUpdate(sys as UpdateSystem);
+            }
+            sys.OnAttach(world);
+            return sys;
+        }
+
+        public static void DetachSystem<T>(this World world) where T : System
+        {
+            var sys = ClassSvc.Get<T>();
+            if (sys is UpdateSystem)
+            {
+                world.RemoveFromUpdate(sys as UpdateSystem);
+            }
+            sys.OnDetach(world);
+
+            if (sys.Refcnt <= 0)
+            {
+                ClassSvc.Remove<T>();
+            }
+        }
+
         #region private
         private static void SetToArchetype<T1>(bool addOrRemove, World world, Entity entity, T1 com) where T1 : IKeyCom
         {

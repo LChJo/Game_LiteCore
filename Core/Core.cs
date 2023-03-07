@@ -11,7 +11,8 @@ namespace LiteFrame.Core
 {
     public abstract class Core : IECSSign
     {
-        IECS IECSSign.ECS => null;
+        //虚类中包含公用Addon
+        IECS IECSSign.ECS => Fetch<ECS.ECS>();
 
         /// <summary>
         /// Core的拥有者来调用Update接口。

@@ -2,6 +2,7 @@
 // LiteCore
 // Copyright © 2022 LoJo. All rights reserved.
 // Email: 22771133@qq.com
+// 描述：Entity只是Component的容器
 //------------------------------------------------------------
 using System;
 using System.Collections.Generic;

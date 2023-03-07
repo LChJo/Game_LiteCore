@@ -10,8 +10,8 @@ namespace LiteFrame.Core
 {
     public abstract class BaseSingle<T> where T : class, new()
     {
-        private static readonly Lazy<T> mLazyInstance = new Lazy<T>((Func<T>) (() => new T()));
+        private static readonly Lazy<T> mLazyInstance = new Lazy<T>(() => new T());
 
-        public static T Instance => BaseSingle<T>.mLazyInstance.Value;
+        public static T Instance => mLazyInstance.Value;
     }
 }
